@@ -3,17 +3,24 @@ import Social from './Social.astro';
 ---
 
 <style>
-  footer {
+  .socials {
     display: flex;
     gap: 1rem;
     margin-top: 2rem;
   }
+
+  p{
+    font-size: x-small;
+    margin-top: 3em;
+  }
+
 </style>
 
 <footer>
   <!-- <p>Learn more about my projects on <a href={`https://www.${platform}.com/${username}`}>{platform}</a>!</p> -->
-
-  <Social platform="twitter" username="astrodotbuild" />
-  <Social platform="github" username="withastro" />
-  <Social platform="youtube" username="astrodotbuild" />
+    <div class="socials">
+      <Social platform="Linkedin" username="in/lia852s" />
+      <Social platform="Upwork" username="freelancers/~012fd501e9a8d3b206" />
+    </div>
+    <p>Copyright © 2024 Lia Siu. All rights reserved. </p>
 </footer>

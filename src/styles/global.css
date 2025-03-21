@@ -1,27 +1,54 @@
+:root{
+  --color-1: #f1f5f9;
+  --color-2: #0e0c3c;
+  --color-3: #5a7f5a;
+  --color-4: #003f5c;
+  --color-5: #fff;
+
+
+}
+
 html {
-    background-color: #f1f5f9;
+    background-color: var(--color-1);
     font-family: sans-serif;
+    color: var(--color-4);
   }
   
   body {
     margin: 0 auto;
     width: 100%;
     max-width: 80ch;
-    padding: 1rem;
-    line-height: 1.5;
-  }
+    padding: 2rem;
+    line-height: 1.2;
+    background: linear-gradient(45deg, rgba(241, 245, 249, 0.5), rgba(14, 12, 60, 0.5), rgba(90, 127, 90, 0.5), rgba(0, 63, 92, 0.5));
+      background-size: 200% 200%;
+      animation: gradientAnimation 15s ease infinite;
+    }
+
+    @keyframes gradientAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+  
   
   * {
     box-sizing: border-box;
   }
 
   html.dark {
-    background-color: #0d0950;
-    color: #fff;
+    background-color: var(--color-2);
+    color: var(--color-5);
   }
   
   .dark .nav-links a {
-    color: #fff;
+    color: var(--color-5);
   }
   
   h1 {
@@ -30,55 +57,43 @@ html {
   }
 
   /* nav styles */
-  .hamburger {
-    padding-right: 20px;
-    cursor: pointer;
-  }
-  
-  .hamburger .line {
-    display: block;
-    width: 40px;
-    height: 5px;
-    margin-bottom: 10px;
-    background-color: #ff9776;
-  }  
 
 .nav-links {
-    width: 100%;
-    top: 5rem;
-    left: 48px;
-    background-color: #ff9776;
-    display: none;
-    margin: 0;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin-inline: auto;
   }
   
   .nav-links a {
+    border: 4px solid var(--color-4);
     display: block;
     text-align: center;
-    padding: 10px 0;
+    background-color: var(--color-3);
+    padding: 1em 1.5em;
     text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-transform: uppercase;
+    font-size: 1rem;
+    /* font-weight: bold; */
+    text-transform: capitalize;
+    margin: 1em;
+    border-radius: 5em;
+    color: var(--color-5);
+
   }
   
   .nav-links a:hover,
   .nav-links a:focus {
-    background-color: #ff9776;
+    background-color: var(--color-4);
   }
   
-  .expanded {
-    display: unset;
-  }
+
 
   
   
   @media screen and (min-width: 636px) {
     .nav-links {
-      margin-left: 5em;
-      display: block;
-      position: static;
-      width: auto;
+
+      width: 300px;
       background: none;
     }
   
@@ -87,8 +102,6 @@ html {
       padding: 15px 20px;
     }
 
-    .hamburger {
-        display: none;
-      }
+
 }  
 
